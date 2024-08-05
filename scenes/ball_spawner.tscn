@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://mfnib7kxxyn"]
+
+[ext_resource type="Script" path="res://scripts/ball_spawner.gd" id="1_ltugk"]
+[ext_resource type="Texture2D" uid="uid://bmu1j0cqname" path="res://assets/ball.png" id="2_bqw5m"]
+
+[node name="BallSpawner" type="Node2D"]
+position = Vector2(298, 143)
+script = ExtResource("1_ltugk")
+min_y = 200
+min_x = 35
+max_x = 539
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_bqw5m")

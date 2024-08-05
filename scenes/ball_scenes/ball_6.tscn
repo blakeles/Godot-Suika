@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmt0ydddrqqbk"]
+
+[ext_resource type="Script" path="res://scripts/balls/ball_6.gd" id="1_wyyy6"]
+[ext_resource type="Texture2D" uid="uid://bmu1j0cqname" path="res://assets/ball.png" id="2_3sg63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_teak2"]
+radius = 70.0643
+
+[node name="Ball_6" type="RigidBody2D"]
+script = ExtResource("1_wyyy6")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+self_modulate = Color(0, 1, 1, 1)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_3sg63")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_teak2")

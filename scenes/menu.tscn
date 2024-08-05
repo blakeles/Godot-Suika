@@ -1,0 +1,64 @@
+[gd_scene load_steps=3 format=3 uid="uid://c2ic3sf68w4qw"]
+
+[ext_resource type="FontFile" uid="uid://dxkkwvv7hvxmb" path="res://assets/ShareTech-Regular.ttf" id="1_pgytx"]
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_tarnb"]
+
+[node name="Menu" type="Node2D"]
+script = ExtResource("1_tarnb")
+
+[node name="Background" type="CanvasLayer" parent="."]
+layer = -1
+follow_viewport_enabled = true
+follow_viewport_scale = 2.0
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+offset_right = 576.0
+offset_bottom = 1028.0
+color = Color(0.129412, 0.14902, 0.180392, 1)
+
+[node name="GUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 576.0
+offset_bottom = 1028.0
+
+[node name="CenterContainer" type="CenterContainer" parent="GUI"]
+layout_mode = 0
+offset_top = 173.0
+offset_right = 575.0
+offset_bottom = 1028.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="GUI/CenterContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/separation = 64
+
+[node name="PLAY" type="Button" parent="GUI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pgytx")
+theme_override_font_sizes/font_size = 32
+text = "PLAY"
+
+[node name="QUIT" type="Button" parent="GUI/CenterContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pgytx")
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="CenterContainer2" type="CenterContainer" parent="GUI"]
+layout_mode = 0
+offset_top = 78.0
+offset_right = 576.0
+offset_bottom = 443.0
+
+[node name="Label" type="Label" parent="GUI/CenterContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_pgytx")
+theme_override_font_sizes/font_size = 32
+text = "HIGHSCORE:
+0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="pressed" from="GUI/CenterContainer/VBoxContainer/PLAY" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="GUI/CenterContainer/VBoxContainer/QUIT" to="." method="_on_quit_pressed"]

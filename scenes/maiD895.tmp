@@ -1,0 +1,27 @@
+[gd_scene load_steps=3 format=3 uid="uid://cxi1547wddhjn"]
+
+[ext_resource type="PackedScene" uid="uid://bhjw3yt6cd5mw" path="res://scenes/ball_scenes/ball_1.tscn" id="1_4ptsi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o3rkb"]
+size = Vector2(20, 904)
+
+[node name="Main" type="Node2D"]
+
+[node name="GameArea" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="GameArea"]
+position = Vector2(0, 586)
+shape = SubResource("RectangleShape2D_o3rkb")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="GameArea"]
+position = Vector2(306, 864)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_o3rkb")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="GameArea"]
+position = Vector2(576, 593)
+shape = SubResource("RectangleShape2D_o3rkb")
+
+[node name="Ball" parent="." instance=ExtResource("1_4ptsi")]
+position = Vector2(324, 107)
+scale = Vector2(0.1, 0.1)
